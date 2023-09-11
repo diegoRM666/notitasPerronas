@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.9)  9 SEP 2023 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.9)  10 SEP 2023 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-12-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -151,12 +151,12 @@ LaTeX Font Info:    ... okay on input line 32.
 * \topmargin=-13.87262pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -215,10 +215,34 @@ File: multiplicacion.png Graphic file (type png)
 <use multiplicacion.png>
 Package pdftex.def Info: multiplicacion.png  used on input line 62.
 (pdftex.def)             Requested size: 215.0023pt x 179.76653pt.
+<permutaciones.png, id=6, 1326.9575pt x 1455.4375pt>
+File: permutaciones.png Graphic file (type png)
+<use permutaciones.png>
+Package pdftex.def Info: permutaciones.png  used on input line 70.
+(pdftex.def)             Requested size: 301.00192pt x 330.1465pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--66
+Underfull \hbox (badness 10000) in paragraph at lines 45--74
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--74
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
@@ -226,24 +250,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--66
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <./resta.png> <./division.png>] [3 <./multiplicacion.png>] (./tarea9Sept.aux
-) ) 
+[2 <./resta.png> <./division.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 77.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 77.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--89
+
+ []
+
+[3 <./multiplicacion.png>]
+<combinaciones.png, id=29, 1326.9575pt x 1419.3025pt>
+File: combinaciones.png Graphic file (type png)
+<use combinaciones.png>
+Package pdftex.def Info: combinaciones.png  used on input line 93.
+(pdftex.def)             Requested size: 301.00192pt x 321.94975pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./permutaciones.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+
+ []
+
+[5 <./combinaciones.png>]
+<calculadora.png, id=38, 1808.7575pt x 2398.9625pt>
+File: calculadora.png Graphic file (type png)
+<use calculadora.png>
+Package pdftex.def Info: calculadora.png  used on input line 106.
+(pdftex.def)             Requested size: 301.00192pt x 399.21602pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--110
+
+ []
+
+[6 <./calculadora.png>]
+<prueba1.png, id=43, 1445.4pt x 781.41937pt>
+File: prueba1.png Graphic file (type png)
+<use prueba1.png>
+Package pdftex.def Info: prueba1.png  used on input line 131.
+(pdftex.def)             Requested size: 430.00462pt x 232.47217pt.
+<prueba2.png, id=44, 1445.4pt x 781.41937pt>
+File: prueba2.png Graphic file (type png)
+<use prueba2.png>
+Package pdftex.def Info: prueba2.png  used on input line 137.
+(pdftex.def)             Requested size: 430.00462pt x 232.47217pt.
+<prueba3.png, id=45, 1445.4pt x 781.41937pt>
+File: prueba3.png Graphic file (type png)
+<use prueba3.png>
+Package pdftex.def Info: prueba3.png  used on input line 143.
+(pdftex.def)             Requested size: 430.00462pt x 232.47217pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--147
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7]
+
+LaTeX Warning: Text page 8 contains only floats.
+
+[8 <./prueba1.png> <./prueba2.png>] [9 <./prueba3.png>] (./tarea9Sept.aux) ) 
 Here is how much of TeX's memory you used:
- 3385 strings out of 476182
- 52911 string characters out of 5796582
- 1853793 words of memory out of 6000000
- 23690 multiletter control sequences out of 15000+600000
- 516842 words of font info for 47 fonts, out of 8000000 for 9000
- 1137 hyphenation exceptions out of 8191
- 55i,7n,62p,523b,262s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on tarea9Sept.pdf (3 pages, 256167 bytes).
+ 3445 strings out of 478126
+ 53953 string characters out of 5842788
+ 1859793 words of memory out of 6000000
+ 23492 multiletter control sequences out of 15000+600000
+ 516888 words of font info for 47 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 55i,7n,62p,716b,262s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti10.pfb>
+Output written on tarea9Sept.pdf (9 pages, 1683868 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
