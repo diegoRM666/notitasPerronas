@@ -49,8 +49,7 @@
 	\newpage
 	
 	\section{Segunda Estructura}
-	Para realizar la siguiente estructura mostrada en \emph{imagen  \ref{fig:est2}} modificaremos solamente tres códigos que serán: \emph{calculadora.c, division.c y resta.c}. 
-	A los dos últimos solamente haremos un hijo como en el caso de la estructura pasada y en caso de \emph{calculadora} crearemos cuatro hijos. 
+	Para realizar la siguiente estructura mostrada en \emph{imagen  \ref{fig:est2}} modificaremos solamente  el código de \emph{calculadora} ya que es el único que genera hijos, de hecho la estructura es muy parecida a lo que se llamaría un \textit{abanico}. 
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.5\linewidth]{graph2.png}
@@ -58,41 +57,27 @@
 		\label{fig:est2}
 	\end{figure}
 	\\
-	Primero revisaremos el código respectivo a \emph{calculadora} donde, como bien lo mencionamos tenemos la creación de cuatro hijos para los procesos que son el primer nivel del árbol. Cada uno tiene un \textbf{idf} distinto, ya que lo que buscamos es identificar cada uno de ellos, ya que al asignarle el código tendremos que ser muy específicos para no incurrir en duplicados. 
+	Revisaremos el código de la \emph{imagen \ref{fig:calculadora2}}, respectivo a \textit{calculadora} , donde encontraremos seis instrucciones \textbf{fork()}, cada una asignada a un identificador diferente para no tener problemas al momento de crear cada uno de los hijos, claro que pudimos ahorrarnos algunas, pero es más sencillo de esta forma. 
+	\\\\
+	Dentro de cada una de las instrucciones encontraremos la asignación del nombre del proceso al primer elemento  del vector de argumentos, seguido encontraremos la asignación del código a este respectivo hijo generado lineas antes. Básicamente el proceso es el mismo, podríamos incluso facilitar la creación con el uso de una estructura de repetición. 
+	\\\\
+	Por último agregamos una instrucción \textbf{sleep()} para lograr que la ejecución tarde un poco en ejecutar y nos permita observar los resultados de la ejecución, lo cual es posible observar en la \emph{imagen \ref{fig:pruebae2}} , donde es claro que la estructura generada es la deseada. 
 	\\
-	Es más sencillo hacerlo de esta manera, ya que si reutilizamos el identificador del proceso se vuelve una tarea complicada de hacer.
-	\\\\
-	Por otro lado, notaremos que no incorporamos una llamada a sistema \textbf{wait(NULL)} que nos ayudaría a que este proceso no termine hasta que los hijos terminen, esto nos permitiría visualizar la estructura y que no tengamos conflictos de que se terminen unos antes que otros, pero curiosamente, funciona mejor sin esta instrucción, entonces la omitimos en este caso.
-	\\\\
-	Después de ello tendremos que modificar los procesos que generan otros hijos, que en este caso son \emph{division y resta} para lo cuál solamente tenemos que hacer un hijo al final del código, que es de suma importancia para que no se repita el código o impresiones de datos. 
+	Es importante ver el como se entregan los resultados en la terminal, ya que estos no se resuelven de manera ordenada debido a las condiciones de carrera, a pesar de que los procesos se hayan ejecutado con cierta lógica de orden dentro del código. 
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.5\linewidth]{calculadora2.png}
 		\caption{Código calculadora.c}
 		\label{fig:calculadora2}
 	\end{figure}
-	\newpage
-	Como vemos en la \emph{imagen \ref{fig:division}} mediante la llamada a sistema \textbf{fork()} creamos un proceso hijo en el proceso \emph{division} y a ese hijo le asignamos el código de \emph{multiplicacion}, por último hacemos lo mismo que antes, utilizar la instrucción \textbf{wait()} para que este proceso termine después que el proceso hijo.
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[width=0.5\linewidth]{division.png}
-		\caption{Código division.c}
-		\label{fig:division}
-	\end{figure}
-	\\\\
-	Lo mismo sucederá  en el caso del proceso \emph{resta} que tendrá como hijo al proceso \emph{permutaciones}, lograrlo es básicamente hacer lo mismo, crear un hijo y asignarle el código del proceso correspondiente.  Y que no se nos olvidé colocar la instrucción que espera a que el proceso hijo termine. 
-	\\\\
-	Por otro lado, para el resto de procesos que son solamente hijos, agregamos una instrucción \textbf{sleep(2)} al final, esto con el fin de visualizar la estructura y que los procesos que no tienen hijos no terminen tan pronto. Realmente es el único cambio que se realiza en estos procesos, ya que fuera de ello no necesita más tratamiento. 
-	\\\\
-	Como veremos en la \emph{imagen \ref{fig:pruebae2}} al ejecutar la \emph{calculadora} verificamos que la estructura generada es igual a la deseada, donde los hijos de medio tendrán a sus dos respectivos hijos de hecho al notar como es que entrega resultados el programa, primero se dan los resultados del primer nivel del árbol y luego se dan los resultados del segundo nivel. 
-	\\\\
-	De esta manera podemos llegar a las estructuras deseadas, desde mi punto de vista es más sencillo realizarlo así ya que los hijos pueden tener un código propio, esto facilita ya que no necesitamos crear toda la estructura desde \emph{calculadora}, al contrario, podemos dividir la creación de procesos para que cada proceso cree el hijo o hijos que requiera, incluso creo que es una buena práctica realizarlo así, es parecido a la POO.
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\linewidth]{pruebaE2.png}
+		\includegraphics[width=\linewidth]{pruebaE2}
 		\caption{Estructura generada}
 		\label{fig:pruebae2}
 	\end{figure}
+	
+
 
 	
 	
