@@ -14,7 +14,6 @@
 	\maketitle
 	\section{Funciones generalizadas para los procesos}
 	Comenzaremos dando las funciones que nos permitan hacer operaciones en común dentro de los tres programas principales. Solamente necesitamos una función que nos permita obtener la hora, por otro lado una función que nos permita escribir dentro de un archivo, y una sencilla estructura para recuperar la hora. 
-	\\\\
 	Por comodidad observaremos la estructura, donde tenemos tres enteros que representaran las horas, minutos y segundos: 
 	\begin{figure}[h!]
 		\centering
@@ -32,7 +31,6 @@
 	\end{figure}
 	\newpage
 	Por último veremos la función que nos permite escribir en un archivo, donde tendremos como parámetros dos apuntadores a un elemento del tipo \textbf{char *} que justamente nos indica la posición de inicio de dos cadenas ; el nombre del archivo y la cadena que queremos escribir dentro del archivo.
-	\\\\
 	Creamos un apuntador del tipo \textit{FILE} que nos permitirá recorrer las posiciones dentro del archivo, inicializandolo con la función \textbf{fopen()} determinar el nombre del archivo y la forma en la que abriremos este archivo. 
 	En caso de que este apuntador sea distinto de \textbf{NULL} nos permitirá escribir en el, con la función \textbf{fprintf()} y cerraremos la cadena de escritura con la función \textbf{fclose()}.
 	\begin{figure}[h!]
@@ -41,7 +39,6 @@
 		\caption{Función Para Escribir En Un Archivo}
 		\label{fig:escritura}
 	\end{figure}
-	
 	\section{Programa de creación de procesos}
 	\begin{figure}[h!]
 		\centering
@@ -51,14 +48,13 @@
 	\end{figure}
 	Notaremos que la función tiene bastante puntos a destacar. Primero que nada tendremos que crear unos datos del tipo \textit{clock\_t} que nos permitirá obtener el punto de inicio y de termino de programa para poder desplegar el tiempo empleado en la creación de los veinte procesos. Así mismo un arreglo de caracteres que nos ayudará a escribir la hora que obtenemos para cada archivo. 
 	Luego declararemos otros dos arreglos de carácter para la creación del archivo. Seguido de ello un \textit{struct CompleteTime} que nos permite obtener la hora en un punto exacto. 
-	\\\\\\
 	Seguido comenzamos un ciclo que se repita veinte veces, dentro de el declaramos una variable del tipo \textit{pid\_t} para poder hacer la llamada a sistema \textbf{fork()} para duplicar el proceso, lo cual ocurre justo después. Esto nos permite diferenciar entre el proceso hijo el proceso padre. En caso de ser uno de los hijos deberemos primero que nada tomar el tiempo en ese momento y escribirla en la cadena de la hora. 
 	\\\\
-	Luego tendremos que escribir en la cadena que pasaremos al archivo. La cual contiene el identificador del proceso, el identificador del proceso padre  y la hora a la que fue creado este hijo. Después de ello escribimos en la cadena que será el nombre del archivo, que es justo la siguiente instrucción mandando a llamar a la función que escribe. Terminamos esta parte con una salida exitosa. 
-	\\\\
-	Luego haremos una pequeña pausa, que se puede omitir, solamente la utilizamos para lograr visualizar en las herramientas los 20 procesos que se crearon. Que es algo parecida a la idea de la llamada de sistema \textbf{wait(NULL)} para esperar a los procesos hijos a que concluyan. 
+	Luego tendremos que escribir en la cadena que pasaremos al archivo. La cual contiene el identificador del proceso, el identificador del proceso padre  y la hora a la que fue creado este hijo. Después de ello escribimos en la cadena que será el nombre del archivo, que es justo la siguiente instrucción mandando a llamar a la función que escribe. Terminamos esta parte con una salida exitosa.
 	\\\\
 	Marcamos el tiempo de finalización de la creación y terminación de procesos para poco después hacer la diferencia, el cociente con un tipo de datos para obtener el dato en segundos y \emph{castearla} a un \textit{double} para visualizarlo mediante una impresión. 
+	\\\\
+	Pero antes de dar los resultados, podríamos hacer una pequeña pausa,  solamente la utilizamos para lograr visualizar en las herramientas los 20 procesos que se crearon. Que es algo parecida a la idea de la llamada de sistema \textbf{wait(NULL)} para esperar a los procesos hijos a que concluyan. 
 	\section{Programa de creación de hilos}
 	\subsection{Función imagen para los hilos creados}
 	\begin{figure}[h!]
@@ -81,8 +77,53 @@
 	\end{figure}
 	Notaremos que al igual que en el caso pasado tenemos dos elementos que nos permitirán obtener el inicio y fin de la creación. De hecho, comenzamos con eso,  inicializando  la variable que nos marca el comienzo de la creación de hilos. Luego declaremos un arreglo de elmentos del tipo \textit{pthread\_t} que nos permite diferenciar a cada uno de los hilos. 
 	\\\\
-	Para la creación de los 20 hilos usaremos un ciclo y dentro de el la instrucción \textbf{pthread\_create()} con argumentos la referencia al arreglo de identificadores de hilos, \textit{NULL} para el caso de la estructura que inicializa los hilos; osea la que es por defecto, la función que le da imagen al hilo y por ultimo los argumentos que recibirá el hilo, que como bien se menciono será el numero de hilo creado. 
+	Para la creación de los 20 hilos usaremos un ciclo y dentro de el la instrucción \textbf{pthread\_create()} con argumentos la referencia al arreglo de identificadores de hilos, \textit{NULL} para el caso de la estructura que inicializa los hilos; osea la que es por defecto, la función que le da imagen al hilo y por ultimo los argumentos que recibirá el hilo, que como bien se menciono será el numero de hilo creado. Justo en este punto es donde debemos de obtener el tiempo de finalización, justo después de terminar de crear los hilos. 
 	\\\\
 	Mas abajo haremos uso de otro ciclo para repetir la instrucción \textbf{pthread\_join} que nos permite esperar a que los hilos se terminan de ejecutar. Esta función recibe el identificador de hilo y un \textit{NULL} que son los valores que recuperaremos al termino del hilo. Terminamos justamente con lo mismo que en el caso pasado, el cálculo y la impresión del total de tiempo de ejecución. 
-		
-\end{document}
+	\subsection{Programa creación de hilos en procesos}
+	En esta parte lo optimo sera crear los procesos con una estructura en abanico para luego darle código a cada uno de ellos, la idea principal es crear ciclo que cree 20 procesos y luego dentro de cada uno de estos procesos otro ciclo para crear cada uno de los hilos que necesitamos.  
+	\subsubsection{Función de la que toma la imagen los hilos}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{funH2.png}
+		\caption{Función Imagen Para Los Hilos}
+		\label{fig:funH2}
+	\end{figure}
+	Al momento de implementar el programa haremos uso de una versión distinta de la función que nos permite la creación de los hilos, ya que en este caso puede ocurrir que se sobrescriban los datos si es que mandamos los contadores que utilizamos en los ciclos para las llamadas a la creación de procesos o hilos. Por lo que lo mejor opción es que al crear el archivo donde escribiremos incorporar el numero de hilo y el numero del proceso, lo que nos permitirá no tener elementos duplicados. 
+	\\
+	Por otro lado en la función principal si que hay algunos cambios, pero realmente son pocos, ya que solo incorporamos el codigo para crear hilos dentro del codigo que ejecuta cada uno de los procesos creados. Como bien mencionamos para ello se utilizan dos ciclos, uno que nos permite crear cada uno de los procesos y dentro de este mismo otro ciclo que nos permite crear los 20 hilos por proceso. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{pvh3.png}
+		\caption{Función que crea los procesos que a su vez crean los hilos }
+		\label{fig:pvh3}
+	\end{figure}
+	\\\\
+	Fijemos la atención en la que a cada hilo no le pasamos absolutamente ningún argumento, ya que realmente no lo necesitamos como bien lo mencionamos, ya que para cada hilo lo mejor sera crear los documentos con el identificador del proceso y el identificador del hilo. Obviamente que tenemos que crear las instrucciones que esperen cada uno de los hilos y a los procesos hijos, no colocaremos antes de ello la instrucción que nos marca la finalización de la creación porque se sobrescribe y en base a la experiencia arroja cantidades negativas de tiempo.
+	\newpage
+	\subsection{Resultados}
+	Con base en los resultados notaremos que los tiempos quedan como a continuacion, empezando por el que menos tarda, al que mas tarda: 
+	\begin{enumerate}
+		\item 20 Procesos
+		\item 20 Procesos con 20 Hilos
+		\item 20 Hilos.
+	\end{enumerate}
+		\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{resultados.png}
+		\caption{Resultados }
+		\label{fig:res}
+	\end{figure}
+		\begin{enumerate}
+		\item ¿Cuál de los dos programas es más rápido? Explique por qué sucede esto.
+		\\El de la creación de los procesos debido a que mi computadora tiene  un procesador de 4  núcleos, lo que significa que hace 4 tareas de manera simultanea, cosa contraria a los hilos que no son al mismo tiempo, si no mas bien simulando esta situación, si bien con mas hilos, pero no se compara.
+		\item ¿Podría obligar a que los procesos en el programa hilosvsprocesos1.c escribieran sobre el mismo archivo?¿Cómo haría eso? Indique las modificaciones necesarias al código
+		\\Se podría considerando que no estamos diciendo que lo hagan de manera simultanea, por lo que cada proceso podría abrir el archivo, escribir en el y luego cerrarlo, para que el otro haga lo mismo, incluso creo que hay una función que bloquea o pausa la escritura en el proceso. Igualmente podríamos hacer un pipe para simular que los dos están escribiendo aunque en realidad solo uno lo hace., esto haciendo pasar las cadenas que quiera escribir al que si esta escribiendo. Del todo no se como realizar el código, pero se que se puede realizar de estas maneras. 
+		\item ¿Podría obligar a que los hilos en el programa hilosvsprocesos2.c escribieran sobre el mismo archivo?¿Cómo haría eso? Indique las modificaciones necesarias al código
+		\\Si y a mi parecer es mas sencillo de hacer, recordemos que los hilos comparte los archivos abiertos, por lo que solamente tendríamos que generar un mecanismo que sincronice la escritura o para que lo hagan en lineas distintas., incluso podríamos guardar la escritura en un buffer temporal que permita simular que se hace de manera simultanea.
+		\item En ambos casos ¿Existiría algún problema? Justifique se respuesta.
+		\\Si, claro que existen problemas, sobre todo el generar los mecanismos de sincronizacion que quiza no sean de lo mas sencillo, otro caso claro, es que podamos sobreescribir los datos que ahi se encuentra, otro problema que tendremos es el desorden en el que pueden llegar las cadenas al archivo, ya que como hemos visto antes, ocurre que unos procesos se ejecutan antes que otros.
+		\item ¿Por qué es importante que tanto los hilos como los procesos compartan información?
+		\\La respuesta obvia es  la respuesta anterior,  porque resulta que si queremos dividir el trabajo en distintas tareas, algunas de ellas se necesitaran comunicar para generar una sincronizacion entre todos los procesos, lo que nos hará evitar colisiones entre los mismo. Y no solo eso, si no también para brindar información importante acerca del estado de finalización de un estado, esto puede desencadenar distintas rutas de ejecución o distintas creaciones de procesos. Las razones son variadas y múltiples.  
+	\end{enumerate}
+	\end{document}
