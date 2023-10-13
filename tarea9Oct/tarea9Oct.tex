@@ -51,4 +51,79 @@
 		\caption{Función 'consume'}
 		\label{fig:consume}
 	\end{figure}
+	\subsection{Función 'produce'}
+	Para el caso de producir, tendremos una versión muy parecida para los dos primeros códigos, ya que solamente tendremos que cambiar la posición con la que es comparado; es decir, en el primer código se compara con diez, para dormir a este hilo cuando se ha llenado el almacén y en caso del segundo condigo se compara con uno para que el hilo se duerma cuando tiene un solo elemento en el almacén.
+	\\\\
+	Por otro lado cuando no ocurra que el hilo no este en esas posiciones del almacén  hará las operaciones que normalmente hace, que es producir en la posición actual y adelantarse una posición, ademas de despertar al otro hilo al final de esto, esto con la finalidad de que los dos compitan de nuevo por tomar la región critica y escribir sobre ella.  
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{produce.png}
+		\caption{Función 'produce'}
+		\label{fig:produce}
+	\end{figure}
+	\subsection{Función 'consume' para el tercer código}
+	Debido a que en el último caso queremos garantizar que se consuman siete productos antes de volver a producir, dado que en la producción se crean siete productos antes de que se comience a consumir; tendremos que hacer un par de cambios para que esto se vea reflejado. 
+	\\
+	Notaremos que en caso de que la posición sea cero despertará al otro hilo y se dormirá el mismo, en caso de que hayamos realizado un total de noventa y ocho elementos entonces despertamos al otro hilo y salimos del programa, justamente con el fin de que no se interbloqueen los hilos, ya que en esa posición el hilo estaría dormido. En cualquier otro caso realiza la misma tarea que en los códigos pasados, con la excepción de que no despierta al otro hilo. 
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{consumev2.png}
+		\caption{Función 'consume'}
+		\label{fig:consumev2}
+	\end{figure}
+	\newpage
+	\subsection{Función 'produce' para el tercer código}
+	En este caso tenemos la misma situación, cuando la posición sea igual a siete tendremos lo mismo, se despertará al hilo de lo producción y se dormirá el otro hilo, tanto en este como el caso en el que se consume se producirán siete y se consumirán siete obligadamente. Luego, cuando tengamos que el contador llego al ultimo elemento despertamos al otro hilo y terminamos el programa. 
+	\\
+	En el caso contrario, donde tengamos que ninguna de las dos condiciones se cumplen, entonces tendremos la ejecución "normal" del hilo como en el caso de los otros códigos. 
+	\\\\
+	Básicamente de esta forma obtenemos los códigos que nos permiten obtener los resultados deseados, cabe aclarar que en el caso del segundo código no es necesario hacer estas últimas condiciones ya que pasa de uno a otro constantemente, dicho de otra forma, solamente alterna entre dos estados y en cada uno de esos estados se despierta al hilo contrario, que era justamente lo que sucedía en el último caso; los dos hilos se podían bloquear y dejar al procesos en un estado de espera perpetuo. 
+	\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{producev2.png}
+	\caption{Función 'produce'}
+	\label{fig:producev2}
+	\end{figure}
+	\newpage
+	\section{Resultados}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{res1}
+		\caption{Resultados primer código}
+		\label{fig:res1}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{res2}
+		\caption{Resultado segundo código}
+		\label{fig:res2}
+	\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{res3}
+		\caption{Resultado tercer código}
+		\label{fig:res3}
+	\end{figure}
+	\newpage
+	\section{Preguntas}
+	\begin{enumerate}
+		\item ¿Qué son las condiciones de carrera?
+		\\Es como una especie de competencia entre diferentes cosas para lograr un objetivo, básicamente son dos procesos o hilos peleando por obtener algo en particular, en este caso un recurso para hacer uso de el. 
+		\item  ¿Qué es la exclusión mutua?
+		\\ Es la solución a las condiciones de carrera, garantiza que el acceso a un recurso compartido se hace de manera ordenada y uno a la vez, osea que no tenemos sobre escrituras de los recursos o cosas por el estilo.  
+		\item ¿Qué pasa si tanto el productor como el consumidor despiertan a su contraparte una vez que han salido de su región crítica?¿Cuál es la diferencia con respecto a no hacerlo?
+		\\ Puede que al despertarlos tengamos un problema de sobreescrirura justamente, porque todo lo que no esta dentro de la región critica es probable que sea modificado, de igual manera podría ocurrir que haya un interbloqueo de los procesos por las condiciones de carrera en busca del recurso. Si no lo hacemos es claro que el programa no tendrá problema alguno dentro de sus región critica aseguramos el uso correcto y ordenado de los recursos compartidos. Además no garantizaría la exclusión mutua. 
+		\item ¿En qué momento se generan condiciones de carrera en su programa? Indique la sección.
+		\\En todos los códigos se genera una condición de carrera en el momento que decidimos escribir en el arreglo denominado como \emph{almacén}, en ese punto los procesos se pelean por el recurso, de hecho después de que se despiertan uno a otros vuelve a ocurrir, solamente que ahora es de manera ordenada.
+		\item Indique las regiones críticas en su código e inclúyalas en su reporte. Justifique su respuesta
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.9\linewidth]{p1}
+			\caption{Regiones Críticas}
+			\label{fig:p1}
+		\end{figure}
+		\item ¿Qué solución implementó para garantizar exclusión mutua?
+		 \\En este caso se utilizó Mutex para que justamente bloqueemos el acceso a la región critica, además se hizo uso de condicionales para despertar o dormir hilos, todo ello con el afán de que tengamos mejo manejo de los datos en la región critica, dado que necesitamos de ciertas condiciones. 
+		\end{enumerate}
+	
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.9)  10 OCT 2023 22:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.9.9)  12 OCT 2023 01:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -213,25 +213,96 @@ File: consume.png Graphic file (type png)
 <use consume.png>
 Package pdftex.def Info: consume.png  used on input line 50.
 (pdftex.def)             Requested size: 430.00462pt x 155.38283pt.
- [3 <./intentaRC.png> <./consume.png>] (./tarea9Oct.aux) ) 
+ [3 <./intentaRC.png> <./consume.png>]
+<produce.png, id=26, 1838.87pt x 712.6625pt>
+File: produce.png Graphic file (type png)
+<use produce.png>
+Package pdftex.def Info: produce.png  used on input line 60.
+(pdftex.def)             Requested size: 430.00462pt x 166.64926pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--64
+
+ []
+
+<consumev2.png, id=27, 1838.87pt x 905.3825pt>
+File: consumev2.png Graphic file (type png)
+<use consumev2.png>
+Package pdftex.def Info: consumev2.png  used on input line 70.
+(pdftex.def)             Requested size: 430.00462pt x 211.71498pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./produce.png>]
+<producev2.png, id=32, 1838.87pt x 905.3825pt>
+File: producev2.png Graphic file (type png)
+<use producev2.png>
+Package pdftex.def Info: producev2.png  used on input line 83.
+(pdftex.def)             Requested size: 430.00462pt x 211.71498pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./consumev2.png>]
+<res1.png, id=37, 1001.24063pt x 780.66656pt>
+File: res1.png Graphic file (type png)
+<use res1.png>
+Package pdftex.def Info: res1.png  used on input line 91.
+(pdftex.def)             Requested size: 301.00192pt x 234.69017pt.
+<res2.png, id=38, 1001.24063pt x 780.66656pt>
+File: res2.png Graphic file (type png)
+<use res2.png>
+Package pdftex.def Info: res2.png  used on input line 97.
+(pdftex.def)             Requested size: 301.00192pt x 234.69017pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<res3.png, id=39, 1001.24063pt x 780.66656pt>
+File: res3.png Graphic file (type png)
+<use res3.png>
+Package pdftex.def Info: res3.png  used on input line 103.
+(pdftex.def)             Requested size: 301.00192pt x 234.69017pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./producev2.png> <./res1.png>]
+
+LaTeX Warning: Text page 7 contains only floats.
+
+[7 <./res2.png> <./res3.png>]
+Overfull \hbox (1.66269pt too wide) in paragraph at lines 110--112
+\OT1/cmr/m/n/10 Es como una es-pecie de com-pe-ten-cia en-tre difer-entes cosas
+ para lo-grar un ob-je-tivo, b^^Sasicamente
+ []
+
+<p1.png, id=51, 1379.1525pt x 715.17188pt>
+File: p1.png Graphic file (type png)
+<use p1.png>
+Package pdftex.def Info: p1.png  used on input line 121.
+(pdftex.def)             Requested size: 387.00153pt x 200.68326pt.
+[8 <./p1.png>] [9] (./tarea9Oct.aux) ) 
 Here is how much of TeX's memory you used:
- 3272 strings out of 478126
- 50579 string characters out of 5842788
- 1854793 words of memory out of 6000000
- 23335 multiletter control sequences out of 15000+600000
+ 3340 strings out of 478126
+ 51516 string characters out of 5842788
+ 1855793 words of memory out of 6000000
+ 23400 multiletter control sequences out of 15000+600000
  517195 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,7n,62p,725b,262s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb>
-Output written on tarea9Oct.pdf (3 pages, 753659 bytes).
+ 55i,7n,62p,725b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb>
+Output written on tarea9Oct.pdf (9 pages, 1613647 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
